@@ -210,4 +210,23 @@ function doImp(){if(!can())return;let n=0,sk=0;g('imp').split(/\n/).forEach((l,i
 const _h3=home;home=()=>(can()&&S.members.some(m=>m.reg)?`<div class="card" style="border-color:var(--y)"><b>⏳ ${S.members.filter(m=>m.reg).length} pendaftar baru</b><button class="btn p f" style="margin-top:8px" onclick="members()">Tinjau pendaftar</button></div>`:'')+_h3();
 initDB().finally(()=>{booted=1;R()});
 R();
-</script><script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}))</script></body></html>
+</script><script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}))</script><script>
+(function(){const std=matchMedia('(display-mode: standalone)').matches||navigator.standalone;if(std)return;
+const ua=navigator.userAgent,ios=/iphone|ipad|ipod/i.test(ua)||(navigator.platform=='MacIntel'&&navigator.maxTouchPoints>1),
+inapp=/FBAN|FBAV|Instagram|Line\/|MicroMessenger|WhatsApp|Telegram|; wv\)/i.test(ua),saf=ios&&!/CriOS|FxiOS|EdgiOS|OPiOS/i.test(ua)&&!inapp;
+let P=null,B,S;const ls=(k,v)=>{try{return v===undefined?localStorage.getItem(k):localStorage.setItem(k,v)}catch(x){}};
+const css=document.createElement('style');css.textContent='#kib{position:fixed;right:12px;top:calc(8px + env(safe-area-inset-top,0px));z-index:50;border:0;border-radius:20px;padding:8px 14px;background:#0b5cab;color:#fff;font:600 13px Inter,system-ui,sans-serif;box-shadow:0 2px 8px #0004;display:none}#kis{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;justify-content:center;padding:0 10px calc(12px + env(safe-area-inset-bottom,0px))}#kis .c{width:100%;max-width:460px;background:var(--c,#fff);color:var(--t,#111827);border:1px solid var(--b,#e5e7eb);border-radius:16px;padding:16px;box-shadow:0 8px 30px #0006;font:14px/1.45 Inter,system-ui,sans-serif}#kis b{font-size:16px}#kis ol{margin:10px 0;padding-left:0;list-style:none}#kis li{display:flex;gap:10px;align-items:center;margin:9px 0}#kis .n{flex:none;width:26px;height:26px;border-radius:50%;background:#0b5cab;color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px}#kis svg{vertical-align:middle;margin:0 2px}#kis button{width:100%;border:0;border-radius:10px;padding:11px;background:var(--s,#eef0f3);color:var(--t,#111827);font:600 14px inherit;cursor:pointer}#kis .ar{text-align:center;font-size:26px;color:#0b5cab;animation:kb 1s infinite}@keyframes kb{50%{transform:translateY(6px)}}';document.head.appendChild(css);
+const shareSvg='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b5cab" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M5 11v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-8"/></svg>',
+plusSvg='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b5cab" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg>';
+function sheet(){if(inapp)return '<b>Buka di Safari dulu</b><p class="m" style="margin:8px 0">Browser di dalam aplikasi (WhatsApp, Instagram, dll.) tidak bisa memasang aplikasi. Ketuk menu <b>⋯</b> lalu pilih <b>Buka di Safari</b>.</p>';
+return '<b>Pasang Kaskami di iPhone</b><ol><li><span class="n">1</span><span>Ketuk tombol <b>Bagikan</b> '+shareSvg+(saf?' di bagian bawah layar Safari.':' di bilah alamat (kanan atas atau bawah). Jika tidak ada, buka link ini di Safari.')+'</span></li><li><span class="n">2</span><span>Gulir menu, lalu pilih <b>Tambah ke Layar Utama</b> '+plusSvg+'</span></li><li><span class="n">3</span><span>Ketuk <b>Tambah</b>. Ikon Kaskami muncul di layar utama.</span></li></ol>'+(saf?'<div class="ar">⬇</div>':'')}
+function open_(){S.querySelector('.c').innerHTML=sheet()+'<button id="kic">Mengerti</button>';S.style.display='flex';S.querySelector('#kic').onclick=()=>{S.style.display='none';ls('kk_ios','1')}}
+addEventListener('DOMContentLoaded',()=>{B=document.createElement('button');B.id='kib';B.textContent='⬇ Instal Aplikasi';document.body.appendChild(B);
+ S=document.createElement('div');S.id='kis';S.innerHTML='<div class="c"></div>';document.body.appendChild(S);
+ B.onclick=async()=>{if(P){P.prompt();await P.userChoice;P=null;B.style.display='none'}else if(ios||inapp)open_();else alert('Buka menu browser (⋮) lalu pilih "Instal aplikasi" atau "Tambahkan ke layar utama".')};
+ if(ios||inapp){B.style.display='block';if(!ls('kk_ios'))setTimeout(open_,2500)}
+ else if(P)B.style.display='block'});
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();P=e;if(B)B.style.display='block'});
+addEventListener('appinstalled',()=>{if(B)B.style.display='none'});
+})();
+</script></body></html>
